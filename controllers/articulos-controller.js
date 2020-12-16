@@ -72,7 +72,6 @@ module.exports = {
     },
     activate: async (req, res, next) => {
         try {
-            console.log(req.body._id);
             const reg = await models.Articulo.update({ estado: 1 }, { where: { id: req.body.id } });
             res.status(200).json(reg);
         } catch (e) {
