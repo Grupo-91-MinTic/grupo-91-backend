@@ -4,12 +4,12 @@ const tokenService = require('../services/token.js')
 
 exports.signin = async (req, res, next) => {
     try {
-        let Usuario = await db.Usuario.findOne({ where: { email: req.body.email} })
-        if (Usuario) {
-            let passwordIsValid = bcrypt.compareSync(req.body.password, Usuario.password);
+        let user = await db.Usuario.findOne({ where: { email: req.body.email} })
+        if (user) {
+            let passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
             if (passwordIsValid) {
-                let tokenReturn = await tokenService.encode(Usuario);
-                res.status(200).send({ Usuario, tokenReturn});
+                let tokenReturn = await tokenService.encode(user);
+                res.status(200).send({ user, tokenReturn});
             } else {
                 res.status(401).send({ auth: false, accessToken: null, reason: "Invalid Password!" });
             }
