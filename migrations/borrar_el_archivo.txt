@@ -1,1 +1,0 @@
-En este directorio van las migraciones del sistema
