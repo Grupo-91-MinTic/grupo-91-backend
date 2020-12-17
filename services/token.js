@@ -19,8 +19,7 @@ module.exports = {
         try {
             let { id } = await jwt.verify(token, 'config.secret');
             let Usuario = await models.Usuario.findOne({ where: {
-                id: id,
-                estado: 1
+                id: id.id
             }})
             if ( Usuario ){
                 return Usuario;
