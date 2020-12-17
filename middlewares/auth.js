@@ -9,7 +9,7 @@ module.exports = {
             });
         }
         const response = await tokenService.decode(req.headers.token);
-        if (response.rol == 'Administrador' || response.rol == 'Vendedor' || response.rol == 'Almacenero') {
+        if (response.rol === 'Administrador' || response.rol === 'Vendedor' || response.rol === 'Almacenero') {
             next();
         } else {
             return res.status(403).send({
