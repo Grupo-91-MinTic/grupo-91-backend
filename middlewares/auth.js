@@ -9,7 +9,6 @@ module.exports = {
             });
         }
         const response = await tokenService.decode(req.headers.token);
-        console.log("Rol", response.rol);
         if (response.rol === 'Administrador' || response.rol === 'Vendedor' || response.rol === 'Almacenero') {
             next();
         } else {
