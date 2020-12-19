@@ -8,7 +8,7 @@ describe('Categoria Endpoints', () => {
         request(app)
             .post('/api/usuario/login')
             .send({
-                email: 'prueba@gmail.com',
+                email: 'admin@gmail.com',
                 password: 'micontraseña',
 
             })

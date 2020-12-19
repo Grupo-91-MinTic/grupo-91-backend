@@ -8,7 +8,7 @@ describe('usuarios Endpoints', () => {
         request(app)
             .post('/api/usuario/login')
             .send({
-                email: 'prueba@gmail.com',
+                email: 'admin@gmail.com',
                 password: 'micontraseña',
 
             })
@@ -47,7 +47,7 @@ describe('usuarios Endpoints', () => {
                 nombre: 'nombre_update',
                 rol: 'Administrador',
                 password: 'micontraseña',
-                email: 'prueba@gmail.com',
+                email: 'admin@gmail.com',
                 id: 1
 
             })
