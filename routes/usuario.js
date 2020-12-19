@@ -6,11 +6,11 @@ const router = routerx();
 
 
 router.post('/login', usuarioController.signin);
-router.get('/list',auth.verifyUsuario , usuarioController.list);
-router.post('/add',auth.verifyUsuario , usuarioController.add);
-router.put('/update',auth.verifyUsuario , usuarioController.update);
-router.put('/activate',auth.verifyUsuario , usuarioController.activate);
-router.put('/deactivate',auth.verifyUsuario , usuarioController.deactivate);
+router.get('/list',auth.verifyAdministrador , usuarioController.list);
+router.post('/add',auth.verifyAdministrador , usuarioController.add);
+router.put('/update',auth.verifyAdministrador , usuarioController.update);
+router.put('/activate',auth.verifyAdministrador , usuarioController.activate);
+router.put('/deactivate',auth.verifyAdministrador , usuarioController.deactivate);
 
 
 module.exports = router;

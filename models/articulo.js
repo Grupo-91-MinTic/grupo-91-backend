@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   Articulo.init({
     codigo: {
       type: DataTypes.STRING,
-      allowNull = false,
+      allowNull: false,
       unique: true
     },
     nombre: DataTypes.STRING,
@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     precio_venta: DataTypes.STRING,
     estado: {
       type: DataTypes.INTEGER,
-      allowNull = false,
+      allowNull: false,
       defaultValue: 1
     },
     categoriaId: DataTypes.INTEGER

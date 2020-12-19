@@ -52,7 +52,9 @@ module.exports = {
             req.body.password = bcrypt.hashSync(req.body.password, 8)
             const reg = await db.Usuario.update({
                 nombre: req.body.nombre,
-                descripcion: req.body.descripcion
+                descripcion: req.body.descripcion,
+                profile: req.body.profile,
+                avatar: req.body.avatar
             }, { where: { id: req.body.id } });
             res.status(200).json(reg);
         } catch (e) {

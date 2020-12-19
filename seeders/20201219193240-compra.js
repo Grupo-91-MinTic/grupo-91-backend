@@ -34,16 +34,16 @@ module.exports = {
       {
         descripcion: 'lorem limsus test',
         cantidad: 2,
-        usuarioId: usuarios[0].id,
-        articuloId: articulos[0].id,
+        usuarioId: usuarios[0][0].id,
+        articuloId: articulos[0][0].id,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         descripcion: 'lorem limsus test',
         cantidad: 5,
-        usuarioId: usuarios[0].id,
-        articuloId: articulos[0].id,
+        usuarioId: usuarios[0][0].id,
+        articuloId: articulos[0][0].id,
         createdAt: new Date(),
         updatedAt: new Date()
       },
