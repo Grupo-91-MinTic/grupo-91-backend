@@ -18,10 +18,23 @@ module.exports = {
         type: Sequelize.STRING
       },
       email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique:true
       },
       estado: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        defaultValue: 1
+      },
+      descripcion: {
+        type: Sequelize.STRING
+      },
+      profile: {
+        type: Sequelize.STRING
+      },
+      avatar: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

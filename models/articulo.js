@@ -14,10 +14,19 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Articulo.init({
-    codigo: DataTypes.STRING,
+    codigo: {
+      type: DataTypes.STRING,
+      allowNull = false,
+      unique: true
+    },
     nombre: DataTypes.STRING,
     descripcion: DataTypes.STRING,
-    estado: DataTypes.INTEGER,
+    precio_venta: DataTypes.STRING,
+    estado: {
+      type: DataTypes.INTEGER,
+      allowNull = false,
+      defaultValue: 1
+    },
     categoriaId: DataTypes.INTEGER
   }, {
     sequelize,
