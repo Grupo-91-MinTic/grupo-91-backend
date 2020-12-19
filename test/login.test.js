@@ -5,7 +5,7 @@ describe('login Endpoints', () => {
         const res = await request(app)
             .post('/api/usuario/login')
             .send({
-                email: 'prueba@gmail.com',
+                email: 'admin@gmail.com',
                 password: 'micontraseña',
 
             })
@@ -17,7 +17,7 @@ describe('login Endpoints', () => {
         const res = await request(app)
             .post('/api/usuario/login')
             .send({
-                email: 'prueba@gmail.com',
+                email: 'admin@gmail.com',
                 password: 'micontraseñaa',
 
             })
