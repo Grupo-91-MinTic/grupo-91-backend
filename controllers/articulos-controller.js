@@ -14,7 +14,15 @@ module.exports = {
     },
     query: async (req, res, next) => {
         try {
-            const reg = await models.Articulo.findOne({ where: { id: req.query.id } });
+            const reg = await models.Articulo.findOne({ 
+                where: { id: req.query.id },
+                include: [
+                    {
+                        model: models.Categoria,
+                        as: 'categoria'
+                    }
+                ]
+            });
             if (!reg) {
                 res.status(404).send({
                     message: 'El registro no existe'
@@ -31,7 +39,14 @@ module.exports = {
     },
     list: async (req, res, next) => {
         try {
-            const reg = await models.Articulo.findAll();
+            const reg = await models.Articulo.findAll({
+                include: [
+                    {
+                        model: models.Categoria,
+                        as: 'categoria'
+                    }
+                ]
+            });
             res.status(200).json(reg);
         } catch (e) {
             res.status(500).send({
@@ -59,8 +74,8 @@ module.exports = {
     update: async (req, res, next) => {
         try {
             const reg = await models.Articulo.update({
-                nombre: req.body.nombre, descripcion:
-                    req.body.descripcion
+                nombre: req.body.nombre, 
+                descripcion: req.body.descripcion
             }, { where: { id: req.body.id } });
             res.status(200).json(reg);
         } catch (e) {

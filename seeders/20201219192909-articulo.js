@@ -20,7 +20,7 @@ module.exports = {
         nombre: 'Articulo 1',
         descripcion: 'lorem limsus test',
         precio_venta: 1000,
-        categoriaId: categorias[0].id,
+        categoriaId: categorias[0][0].id,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -29,7 +29,7 @@ module.exports = {
         nombre: 'Articulo 2',
         descripcion: 'lorem limsus test',
         precio_venta: 1000,
-        categoriaId: categorias[0].id,
+        categoriaId: categorias[0][0].id,
         createdAt: new Date(),
         updatedAt: new Date()
       },

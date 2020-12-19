@@ -19,12 +19,12 @@ module.exports = (sequelize, DataTypes) => {
     password: DataTypes.STRING,
     email: {
       type: DataTypes.STRING,
-      allowNull = false,
+      allowNull: false,
       unique: true
     },
     estado: {
       type: DataTypes.INTEGER,
-      allowNull = false,
+      allowNull: false,
       defaultValue: 1
     },
     descripcion: DataTypes.STRING,
