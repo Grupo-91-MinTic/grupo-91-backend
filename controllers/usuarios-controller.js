@@ -10,7 +10,7 @@ module.exports = {
                 let passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
                 if (passwordIsValid) {
                     let tokenReturn = await tokenService.encode(user);
-                    res.status(200).send({ user, tokenReturn});
+                    res.status(200).send({ auth: true, tokenReturn});
                 } else {
                     res.status(401).send({ auth: false, accessToken: null, reason: "Invalid Password!" });
                 }
