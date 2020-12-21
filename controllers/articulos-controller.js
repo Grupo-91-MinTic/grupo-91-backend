@@ -74,8 +74,12 @@ module.exports = {
     update: async (req, res, next) => {
         try {
             const reg = await models.Articulo.update({
+                codigo : req.body.codigo,
                 nombre: req.body.nombre, 
-                descripcion: req.body.descripcion
+                descripcion: req.body.descripcion,
+                caracteristicas : req.body.descripcion,
+                urlImage: req.body.urlImage,
+                categoriaId: req.body.categoriaId
             }, { where: { id: req.body.id } });
             res.status(200).json(reg);
         } catch (e) {
